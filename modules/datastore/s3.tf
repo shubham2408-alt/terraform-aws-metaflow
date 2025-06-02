@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "this" {
   bucket        = local.s3_bucket_name
-  acl           = "private"
   force_destroy = var.force_destroy_s3_bucket
+
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
@@ -17,6 +17,12 @@ resource "aws_s3_bucket" "this" {
       Metaflow = "true"
     }
   )
+}
+
+# ✅ New resource for ACL (instead of using deprecated inline attribute)
+resource "aws_s3_bucket_acl" "this" {
+  bucket = aws_s3_bucket.this.id
+  acl    = "private"
 }
 
 resource "aws_s3_bucket_public_access_block" "this" {
