@@ -41,8 +41,8 @@ module "metaflow-common" {
 }
 
 module "metaflow-metadata-service" {
-  source  = "outerbounds/metaflow/aws//modules/metadata-service"
-  version = "0.10.0"
+  source  = "git::https://github.com/shubham2408-alt/terraform-aws-metaflow.git//modules/metadata-service?ref=master"
+  
 
   resource_prefix = local.resource_prefix
   resource_suffix = local.resource_suffix
