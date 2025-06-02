@@ -1,5 +1,5 @@
 module "metaflow-datastore" {
-  source = "./modules/datastore"
+  source = "git::https://github.com/shubham2408-alt/terraform-aws-metaflow.git//modules/datastore?ref=master"
 
   force_destroy_s3_bucket = var.force_destroy_s3_bucket
   enable_key_rotation     = var.enable_key_rotation
