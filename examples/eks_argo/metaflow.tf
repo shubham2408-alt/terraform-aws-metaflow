@@ -19,7 +19,7 @@ data "aws_availability_zones" "available" {
 
 
 module "metaflow-datastore" {
-  source  = "git::https://github.com/shubham2408-alt/terraform-aws-metaflow.git//modules/datastore?ref=master"
+  source  = "git::https://github.com/shubham2408-alt/terraform-aws-metaflow.git//modules/datastore?ref=aac43e6f8db7587e10121f2d2cf97c2b903bdc2c"
   
 
   force_destroy_s3_bucket = true
